@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Oswald&display=swap" rel="stylesheet">
+    <title>Calculador de nota</title>
+</head>
+<body>
+
+    <header>
+        <h1>Caderneta de Notas</h1>
+    </header>
+
+
+    <main class="container">
+    <div>
+        <table class="tabela">
+            <tr>
+                <th>Nome</th>
+                <th>1ª Unidade</th>
+                <th>2ª Unidade</th>
+                <th>3ª Unidade</th>
+                <th>4ª Unidade</th>
+                <th>Checar</th>
+                <th>Situação</th>
+                <th>Média</th>
+            </tr>
+            <tr>
+                <th><input type="text"></th>
+               <th> <input type="number" id="uni1"></th>
+                <th><input type="number" id="uni2"></th>
+                <th><input type="number" id="uni3"></th>
+                <th><input type="number"id="uni4"></th>
+                <th><input type="submit" class="check" onclick="calcular()"></th>
+                <th> <p class="resultado"> Resultado </p></th>
+                <th><p class="media"> Média</p></th>
+            </tr>
+
+
+        </table>
+    </div>
+    </main>
+
+    
+</body>
+
+<script>
+ 
+
+
+
+    function calcular(check){
+        
+    var unid1= Number(document.querySelector('#uni1').value);
+    var unid2 = Number(document.querySelector('#uni2').value);
+    var unid3 = Number(document.querySelector('#uni3').value);
+    var unid4 = Number(document.querySelector('#uni4').value);
+    var total = unid1 + unid2 + unid3 + unid4;
+    var a = Number('4');
+    var media = (total/a);
+    var aprovado = "Aprovado";
+    var reprovado = "Reprovado";   
+
+    console.log(media);
+    console.log (typeof(media))
+
+
+    if (media >=5){
+        
+        document.querySelector('.resultado').innerHTML = ("Aprovado");
+            document.querySelector('.resultado').style.color ='#2b9741';
+        document.querySelector('.media').innerHTML = (media);
+        document.querySelector('.resultado').style.background ='white';
+    }else{
+        document.querySelector('.resultado').innerHTML = ("Reprovado");
+        document.querySelector('.resultado').style.color ='red';
+        document.querySelector('.resultado').style.background ='white';
+        document.querySelector('.media').innerHTML = (media);
+    }
+
+    }
+   
+
+    
+    
+
+</script>
+</html>
